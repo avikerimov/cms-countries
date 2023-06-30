@@ -18,7 +18,7 @@ use App\Http\Controllers\DashboardController;
 */
 
 /* Protected Dashboard Route with IP Check and Authentication Middleware */
-Route::middleware(['check.israel.ip'])->group(function () {
+Route::middleware(['restrict.to.israel'])->group(function () {
     Route::get('/', function () {
         return view('dashboard');
     })->middleware(['auth', 'verified'])->name('dashboard');
